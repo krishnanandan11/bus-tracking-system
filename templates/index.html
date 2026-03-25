@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bus Tracker</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+</head>
+<body>
+
+<h2>Live Bus Tracking</h2>
+<div id="map" style="height:500px;"></div>
+
+<script>
+var map = L.map('map').setView([28.6139, 77.2090], 13);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+var markers = {};
+
+var socket = io("http://127.0.0.1:5000");
+
+socket.on('connect', function() {
+    console.log("Socket Connected ✅");
+});
+
+socket.on('location_update', function(data) {
+    console.log("LIVE:", data);
+
+    let id = data.bus_id;
+    let lat = data.latitude;
+    let lon = data.longitude;
+
+    if (markers[id]) {
+        markers[id].setLatLng([lat, lon]);
+    } else {
+        markers[id] = L.marker([lat, lon]).addTo(map);
+    }
+
+    map.setView([lat, lon]);
+});
+</script>
+
+</body>
+</html>

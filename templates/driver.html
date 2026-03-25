@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Driver Dashboard</h2>
+
+<button onclick="sendLocation()">Send My Location</button>
+
+<p id="status"></p>
+
+<script>
+function sendLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(async function(position) {
+
+            let data = {
+                bus_id: 1,
+                latitude: position.coords.latitude,
+                longitude: position.coords.longitude
+            };
+
+            let res = await fetch("http://127.0.0.1:5000/update_location", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(data)
+            });
+
+            let result = await res.json();
+            document.getElementById("status").innerText = result.message;
+
+        });
+    } else {
+        alert("Geolocation not supported");
+    }
+}
+</script>
+
+</body>
+</html>
