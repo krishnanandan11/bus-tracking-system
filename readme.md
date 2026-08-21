@@ -1,21 +1,21 @@
-# 🚌 Real-Time Bus Tracking System
+# Real-Time Bus Tracking System
 
 A **Real-Time Bus Tracking System** designed to track and display the live location of multiple buses on an interactive map. The project aims to provide a simple and efficient way for users, drivers, and administrators to monitor bus locations in real time.
 
-> 🚧 **Project Status: In Progress**
+> **Project Status: In Progress**
 
-## 🚀 Features
+## Features
 
-* 📍 Real-time bus location tracking
-* 🗺️ Interactive map using **Leaflet.js** and **OpenStreetMap**
-* 🚌 Support for tracking multiple buses
-* 🔄 Real-time location updates using **Flask-SocketIO**
-* 🔎 Search functionality using bus code or bus number
-* 👨‍💼 Admin panel for managing bus information
-* 🧑‍✈️ Driver interface for updating bus locations
-* 👤 User interface for viewing and tracking buses
+* Real-time bus location tracking
+* Interactive map using **Leaflet.js** and **OpenStreetMap**
+* Support for tracking multiple buses
+* Real-time location updates using **Flask-SocketIO**
+* Search functionality using bus code or bus number
+* Admin panel for managing bus information
+* Driver interface for updating bus locations
+* User interface for viewing and tracking buses
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 ### Backend
 
@@ -35,15 +35,15 @@ A **Real-Time Bus Tracking System** designed to track and display the live locat
 
 * OpenStreetMap
 
-## ⚙️ How It Works
+## How It Works
 
-1. The **Driver** updates the current location of the bus.
-2. The location data is sent to the **Flask backend**.
-3. **Flask-SocketIO** broadcasts the updated location in real time.
-4. The **User Dashboard** displays the bus location on an interactive map.
-5. The **Admin Panel** can manage and monitor available buses.
+1. The Driver updates the current location of the bus.
+2. The location data is sent to the Flask backend.
+3. Flask-SocketIO broadcasts the updated location in real time.
+4. The User Dashboard displays the bus location on an interactive map.
+5. The Admin Panel can manage and monitor available buses.
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 Bus-Tracking-System/
@@ -65,7 +65,7 @@ Bus-Tracking-System/
 └── README.md
 ```
 
-## 🔮 Future Improvements
+## Future Improvements
 
 * Add GPS integration for automatic location tracking
 * Add user authentication and authorization
@@ -75,14 +75,12 @@ Bus-Tracking-System/
 * Add notifications for bus arrivals
 * Deploy the application online
 
-## 🎯 Project Goal
+## Project Goal
 
 The goal of this project is to build a practical **real-time tracking application** using Python and web technologies. It demonstrates the use of **Flask, WebSockets, databases, and interactive maps** to solve a real-world transportation tracking problem.
 
-## 👨‍💻 Author
+## Author
 
 **Krishna Nandan**
 
-Aspiring Data Analyst | BCA (AI & Data Science)
-
-Feel free to connect and explore my other projects!
+BCA (AI & Data Science) | Aspiring Data Analyst
